@@ -17,6 +17,7 @@ var nickShows =
 // generates one random show
 var show = nickShows[Math.floor(Math.random() * nickShows.length)];
 var wins = 0
+var remainingLetters = show.length
 var guessLeft = 10
 var guessedWord = [];
 var guessedLetters = [];
@@ -39,6 +40,7 @@ function displayScore() {
 
 function startGame() {
 	show;
+	console.log(show);
 	guessedWord = [];
 	for (var i=0; i < show.length; i++) {
 		guessedWord.push("_")
@@ -59,21 +61,7 @@ function guessedLetters() {
 
 // initialize game
 startGame();
-
-
-
-// when a letter is typed - compare this letter to each character of the word
-// //create a for loop to match letter = each letter of word
-
-// if the letter matches with a character in the word - save the index position
-// 	//if matches
-// 	//save the index position
-// 		create an array to save the value position
-
-// 	// the guessedWord array will replace _ with the letter of the user Choice
-// 	replace the guessed Word's index position with that of the user Choice
-
-
+displayScore();
 
 document.onkeyup = function(event) {
 	var userChoice = event.key.toLowerCase()
@@ -86,49 +74,33 @@ document.onkeyup = function(event) {
 	}
 
 	if (wordIndex.length > 0) {
+		remainingLetters -= wordIndex.length
+		console.log(remainingLetters);
 		for (var j=0; j < wordIndex.length; j++) {
 			var new_index = wordIndex[j]
 			guessedWord[new_index] = userChoice
 		}
 		return document.getElementById("word").innerHTML = guessedWord
-	}
-	else {
+	} else {
 		guessLeft--
 		guessesLeftFunction()
 		document.getElementById("letters").innerHTML += (userChoice + " ")
-
-
-
-}
-
-	// else if {
-	// 	for (var k=0; k < guessWord.length; k++) {
-	// 		if (guessedWord[k] !== "_") {
-	// 			winScore++
-	// 			winFunction()
-	// 			resetGame()
-	// 		}
-	// 	}
-	//
+	};
 	nextLetter();
 
-}
+	// it keeps printing the same show and the remaining letters keep going negative
 
-	// if (guessLeft === 0) {
-	// 		show
-	// 		startGame();
-	// 		// this is printing out the same show how does it randomize?
-	// 	} else if {
-	// 		for (var k = 0; k < show.length; i++) {
-	// 				if (show[i] !== "-") {
-	// 					alert("you won!")
-	// 				}
-	// 		}
-	// 		winScore++
-	// 		winFunction();
-	// 		startGame();
+	if (remainingLetters === 0) {
+		wins++
+		winFunction();
+		displayScore();
+		startGame();
+		remainingLetters == show.length;
+	} else if (guessLeft === 0) {
+		displayScore();
+		startGame();
+	};
 
-	// 	}
-	// }
+};
 
 
