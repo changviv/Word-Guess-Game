@@ -1,5 +1,4 @@
 var nickShows = ["catdog", "rockos", "allthat", "rugrats", "heyarnold", "angrybeavers", "renandstimpy", "doug", "spongebob", "rocketpower"]
-
 var show;
 var wins = 0;
 var remainingLetters;
@@ -77,7 +76,6 @@ document.onkeyup = function(event) {
 			startGame();
 		}
 	};
-
 };
 
 
