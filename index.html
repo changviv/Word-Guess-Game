@@ -5,17 +5,24 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Word Guess</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<!-- <link rel="stylesheet" type="text/css" media="screen" href="main.css" /> -->
+	<link rel="stylesheet" href="assets/css/reset.css"/>
+	<link href="https://fonts.googleapis.com/css?family=Niramit:700i" rel="stylesheet">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<link rel="stylesheet" href="assets/css/style.css"/>
 </head>
 <body>
-	<h1> Hangman: 90's Nickelodean Shows</h1>
-
-	<h3> Press any key to start! </h3>
-	<p>Wins: <span id="wins"></span></p>
-	<p id="word"></p>
-	<p>Number of Guesses Left: <span id="guesses-left"></span></p>
-	<p>Letters already guessed: <span id="letters"></span></p>
-	<script src="assets/javascript/game.js"></script>
+<div class="jumbotron">
+  <div class="container">
+    <h1 class="display-4">Hangman: 90's Nickelodean Shows</h1>
+    <hr class="my-4">
+    <p class="lead">Press any key to start!</p>
+    <p>Wins: <span id="wins"></span></p>
+		<p id="word"></p>
+		<p>Number of Guesses Left: <span id="guesses-left"></span></p>
+		<p>Letters already guessed: <span id="letters"></span></p>
+  </div>
+</div>
+<script src="assets/javascript/game.js"></script>
 </body>
 </html>
 

@@ -1,0 +1,28 @@
+body {
+	font-family: 'Niramit', sans-serif;
+	background-color: #f67b26;
+}
+
+.lead {
+	font-size: 30px;
+}
+
+p {
+	font-size: 25px;
+	color: white;
+	font-weight: 3px;
+}
+
+.display-4 {
+	color: lime;
+}
+
+#letters, #guesses-left, #wins {
+	letter-spacing: 5px;
+	color: white;
+}
+
+.jumbotron {
+	background-color: #fabb6e;
+	margin-top: 2rem
+}
