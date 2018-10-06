@@ -1,23 +1,11 @@
 
 // Array list of shows
-var nickShows =
-    [
-    	"catdog",
-     	"rockos",
-     	"allthat",
-     	"rugrats",
-     	"heyarnold",
-			"angrybeavers",
-			"renandstimpy",
-			"doug",
-			"spongebob",
-			"rocketpower"
-		]
+var nickShows = ["catdog", "rockos", "allthat", "rugrats", "heyarnold", "angrybeavers", "renandstimpy", "doug", "spongebob", "rocketpower"]
 
 // generates one random show
-var show = nickShows[Math.floor(Math.random() * nickShows.length)];
+var show;
 var wins = 0
-var remainingLetters = show.length
+var remainingLetters;
 var guessLeft = 10
 var guessedWord = [];
 var guessedLetters = [];
@@ -31,26 +19,26 @@ function winFunction() {
 	return document.getElementById("wins").innerHTML = wins
 }
 
-function displayScore() {
-	document.getElementById("letters").innerHTML = ""
-	guessLeft = 10;
-	winFunction();
-	guessesLeftFunction();
-};
-
 function startGame() {
-	show;
-	console.log(show);
+	guessesLeftFunction();
+	winFunction()
+	show = nickShows[Math.floor(Math.random() * nickShows.length)];
+	console.log("the show name: " + show)
+	remainingLetters = show.length
 	guessedWord = [];
 	for (var i=0; i < show.length; i++) {
 		guessedWord.push("_")
 	}
 	return document.getElementById("word").innerHTML = guessedWord
-};
-
-function nextLetter() {
-	wordIndex = [];
 }
+
+function displayScore() {
+	document.getElementById("letters").innerHTML = ""
+	guessLeft = 10;
+	wins;
+	winFunction();
+	guessesLeftFunction();
+};
 
 
 function guessedLetters() {
@@ -66,6 +54,7 @@ displayScore();
 document.onkeyup = function(event) {
 	var userChoice = event.key.toLowerCase()
 	var wordIndex = [];
+	var new_index;
 
 	for (var i=0; i < show.length; i++) {
 		if (userChoice === show[i]) {
@@ -74,32 +63,30 @@ document.onkeyup = function(event) {
 	}
 
 	if (wordIndex.length > 0) {
-		remainingLetters -= wordIndex.length
-		console.log(remainingLetters);
 		for (var j=0; j < wordIndex.length; j++) {
-			var new_index = wordIndex[j]
+			new_index = wordIndex[j]
 			guessedWord[new_index] = userChoice
 		}
-		return document.getElementById("word").innerHTML = guessedWord
+		document.getElementById("word").innerHTML = guessedWord
+		remainingLetters -= wordIndex.length
 	} else {
 		guessLeft--
 		guessesLeftFunction()
 		document.getElementById("letters").innerHTML += (userChoice + " ")
 	};
-	nextLetter();
 
-	// it keeps printing the same show and the remaining letters keep going negative
+	wordIndex = [];
 
-	if (remainingLetters === 0) {
-		wins++
-		winFunction();
-		displayScore();
-		startGame();
-		remainingLetters == show.length;
-	} else if (guessLeft === 0) {
-		displayScore();
-		startGame();
-	};
+	if ((remainingLetters === 0) || (guessLeft === 0)) {
+		if (remainingLetters === 0) {
+			wins++;
+			displayScore()
+			startGame()
+		} else {
+			displayScore();
+			startGame();
+		};
+	}
 
 };
 
