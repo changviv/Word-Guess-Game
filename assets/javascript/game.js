@@ -1,4 +1,4 @@
-var nickShows = ["catdog", "rockos", "allthat", "rugrats", "heyarnold", "angrybeavers", "renandstimpy", "doug", "spongebob", "rocketpower"]
+var nickShows = ["catdog", "rockos", "thornberrys", "rugrats", "heyarnold", "angrybeavers", "renandstimpy", "doug", "spongebob", "rocketpower"]
 var show;
 var wins = 0;
 var remainingLetters;
@@ -27,7 +27,7 @@ function startGame() {
 	for (var i=0; i < show.length; i++) {
 		guessedWord.push("_");
 	}
-	document.getElementById("word").innerHTML = guessedWord;
+	document.getElementById("word").innerHTML = guessedWord.join('  ');
 }
 
 function displayScore() {
@@ -56,7 +56,7 @@ document.onkeyup = function(event) {
 		for (var j=0; j < wordIndex.length; j++) {
 			guessedWord[wordIndex[j]] = userChoice
 		}
-		document.getElementById("word").innerHTML = guessedWord
+		document.getElementById("word").innerHTML = guessedWord.join('  ')
 		remainingLetters -= wordIndex.length
 	} else {
 		guessLeft--
@@ -79,3 +79,4 @@ document.onkeyup = function(event) {
 };
 
 
+// you have to fix the uniqueness of the word

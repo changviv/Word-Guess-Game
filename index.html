@@ -13,15 +13,28 @@
 <body>
 <div class="jumbotron">
   <div class="container">
-    <h1 class="display-4">Hangman: 90's Nickelodean Shows</h1>
+  	<img id="logo" src="assets/images/nickelodeon_title.png" alt="nickeloden_title">
+    <h1 class="display-4">Hangman: 90's Nickelodean Classics</h1>
     <hr class="my-4">
-    <p class="lead">Press any key to start!</p>
-    <p>Wins: <span id="wins"></span></p>
-		<p id="word"></p>
-		<p>Number of Guesses Left: <span id="guesses-left"></span></p>
-		<p>Letters already guessed: <span id="letters"></span></p>
+    <div class="container">
+  		<div class="row">
+  		  <div class="col left-container">
+  		    <p class="lead">Press any key to start!</p>
+  		  	<p>Wins: <span id="wins"></span></p>
+					<p>Number of Guesses Left: <span id="guesses-left"		></span></p>
+					<p>Letters already guessed: <span id="letters"></		span></p>
+  		  </div>
+  		  <div class="col right-container">
+  		    <p id="word"></p>
+  		    <!-- add image below -->
+  		  </div>
+  		</div>
+
   </div>
 </div>
+
+
+
 <script src="assets/javascript/game.js"></script>
 </body>
 </html>

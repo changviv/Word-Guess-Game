@@ -13,8 +13,30 @@ p {
 	font-weight: 3px;
 }
 
+#logo {
+	width: 100%;
+}
+
+
 .display-4 {
-	color: lime;
+	color: white;
+}
+
+.col {
+	margin: 10px;
+}
+
+.left-container {
+	border: 3px dotted white;
+}
+
+.right-container {
+	border: 3px dotted white;
+}
+
+#word {
+	text-align: center;
+	font-size: 43px;
 }
 
 #letters, #guesses-left, #wins {
@@ -24,5 +46,4 @@ p {
 
 .jumbotron {
 	background-color: #fabb6e;
-	margin-top: 2rem
 }
