@@ -20,6 +20,7 @@ p {
 
 .display-4 {
 	color: white;
+	text-align: center;
 }
 
 .col {
@@ -36,7 +37,7 @@ p {
 
 #word {
 	text-align: center;
-	font-size: 43px;
+	font-size: 38px;
 }
 
 #letters, #guesses-left, #wins {
