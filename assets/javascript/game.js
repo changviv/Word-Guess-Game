@@ -77,6 +77,3 @@ document.onkeyup = function(event) {
 		}
 	};
 };
-
-
-// you have to fix the uniqueness of the word
