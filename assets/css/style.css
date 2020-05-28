@@ -61,3 +61,7 @@ p {
 .modal-font {
 	color: black;
 }
+
+.modal-content {
+	background-color: #f67b26;
+}

@@ -2,6 +2,7 @@ var nickShows = ["catdog", "rockos", "thornberrys", "rugrats", "heyarnold", "ang
 var show;
 var wins = 0;
 var remainingLetters;
+var usedLetters = [];
 var guessLeft = 10;
 var guessedWord = [];
 var guessedLetters = [];
@@ -24,6 +25,7 @@ function startGame() {
 	winFunction();
 	remainingLetters = show.length;
 	guessedWord = [];
+	usedLetters = [];
 	for (var i=0; i < show.length; i++) {
 		guessedWord.push("_");
 	}
@@ -69,30 +71,29 @@ displayScore();
 
 document.onkeyup = function(event) {
 	var userInput = event.code;
-	var wordIndex = [];
-	
 	var checkLetter = lettersOnly(userInput);
-	if (checkLetter == true) {
-		var userChoice = event.key.toLowerCase();
+	var userChoice = event.key.toLowerCase();
+	var wordIndex = [];
+	console.log(usedLetters)
+	if (checkLetter == true && !usedLetters.includes(userChoice)) {
 		for (var i=0; i < show.length; i++) {
-			if (userChoice === show[i]) {
-				wordIndex.push(i);
-			}
+      if (userChoice === show[i]) {
+              wordIndex.push(i);
+      }
 		}
-
 		if (wordIndex.length > 0) {
 			for (var j=0; j < wordIndex.length; j++) {
-				guessedWord[wordIndex[j]] = userChoice;
+			  guessedWord[wordIndex[j]] = userChoice;
+			  remainingLetters --;
 			}
 			document.getElementById("word").innerHTML = guessedWord.join('  ');
-			remainingLetters -= wordIndex.length;
 		} else {
 			guessLeft--;
 			guessesLeftFunction();
 			document.getElementById("letters").innerHTML += (userChoice + " ");
 		}
 
-		wordIndex = [];
+		usedLetters.push(userChoice);
 
 		if ((remainingLetters === 0) || (guessLeft === 0)) {
 			if (remainingLetters === 0) {
