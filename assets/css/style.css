@@ -13,8 +13,16 @@ p {
 	font-weight: 3px;
 }
 
-#logo {
+.logo-container {
 	width: 100%;
+	justify-content: center;
+	display: inline-block;
+}
+
+#logo {
+	margin: 0 auto;
+	display: block;
+	width: 80%;
 }
 
 
@@ -46,5 +54,10 @@ p {
 }
 
 .jumbotron {
-	background-color: #fabb6e;
+	background-color: #f67b26;
+	padding-top: 3rem
+}
+
+.modal-font {
+	color: black;
 }
