@@ -78,7 +78,7 @@ document.onkeyup = function(event) {
 	if (checkLetter == true && !usedLetters.includes(userChoice)) {
 		for (var i=0; i < show.length; i++) {
       if (userChoice === show[i]) {
-              wordIndex.push(i);
+        wordIndex.push(i);
       }
 		}
 		if (wordIndex.length > 0) {
